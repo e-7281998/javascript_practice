@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <p>aaaaaaaaaaa bbbbbbbbbbb cccccccc dd eeeeeee
+            ffffffffffffff ggg h iiiiiiiiiiiiiiiiiii jjjjjjjjjjjjjjjjjjj
+            kkkk l mmmmm nnnnn oo pppppppppppp qqqqqqq r sssssss tttttt u
+            vvvvvv wwwwwwwwwwwwwwwwwwwwww xxx y z
+            <button id="submit">Click me</button>
+        </p>
+    </div>
+    <script>
+        const btn = document.getElementById('submit');
+        const container = document.querySelector('.container');
+        btn.addEventListener('click', function () {
+            btn.style.color = 'red';
+        });
+        container.addEventListener('mouseenter', function () {
+            console.log('마우스 들어옴');
+        });
+        container.addEventListener('mouseleave', function () {
+            console.log('마우스 나감');
+        });
+
+        window.addEventListener('keydown', function (e) {
+            console.log(e.key);
+            console.log(e.keyCode);
+        })
+    </script>
+</body>
+
+</html>
