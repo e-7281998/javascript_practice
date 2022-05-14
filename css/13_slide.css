@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 90%;
+    position: relative;
+    overflow: hidden;
+    background: lightblue;
+    margin: 1rem auto;
+    border-radius: 10px;
+}
+
+.slider-container {
+    position: absolute;
+    width: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    padding: 1rem;
+    top: 50%;
+    text-align: center;
+    overflow: hidden;
+    transform: translateY(-50%);
+}
+
+.slider-container.animated {
+    -webkit-transition: left .3s ease-in;
+    transition: left .3s ease-in;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    position: absolute;
+}
+
+#prev {
+    left: 10%;
+}
+
+#next {
+    right: 10%;
+}
