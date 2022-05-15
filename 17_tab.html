@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/17_tab.css">
+</head>
+
+<body>
+    <div class="tab-wrapper">
+        <ul class="tab-menu">
+            <li><a href="#tabs-1" class="active">menu1</a></li>
+            <li><a href="#tabs-2">menu2</a></li>
+            <li><a href="#tabs-3">menu3</a></li>
+        </ul>
+        <div id="tab-content">
+            <div id="tabs-1">
+                <div class="content-title">제목1</div>
+                <div class="content-body">
+                    세상 모든 남자를 일렬로 세우면 민호와 키는 양끝에 있을거란 말이 있을 정도. 이러한 정반대의
+                    성향 때문인지 연습생 시절에 크게 싸워서 데뷔 후에도 한동안 관계가 서먹했었다고 한다. 시간이 흐르며 서로의 성향을 존중하게 되고, 지금은 완전 찐친. 최근 91즈의 관계성은
+                    210220
+                    아는형님에서 말했던 민호 전역날의 일화와 220218 민호와 키가 함께 출연했던 나혼자산다를 보면 바로 파악할 수 있다.
+                </div>
+            </div>
+            <div id="tabs-2">
+                <div class="content-title">제목2</div>
+                <div class="content-body">
+                    민호는 불꽃 카리스마(?) 컨셉에 의해 데뷔 초엔 비글끼를 숨겨왔었는데
+                    키는 반대로 자신의 끼를 예능에서 적극적으로 보여줬었다. 지금은 둘 다 비글끼를 적극적으로 표출하는 중. 또한 두 사람은 샤이니 내에서 웃음소리가 가장 시끄러워 까마귀들이라고
+                    불리기도
+                    한다
+                </div>
+            </div>
+            <div id="tabs-3">
+                <div class="content-title">제목3</div>
+                <div class="content-body">
+                    댄스라인으로 꼽히는 멤버는 태민, Key인데, 특히 메인댄서 태민은 아이돌계에서 넘사벽이라 불리며, 손꼽히는 실력을 가진 것으로 유명하다. 데뷔 당시 헤드라인이 SM 춤짱 포함
+                    5인조 신인그룹
+                    데뷔였을 정도. Key도 SM 전국투어 오디션에서 8,000:1의 경쟁률을 '댄스'로 뚫고 데뷔했을 정도로 실력이 뛰어나다.
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var targetLink = document.querySelectorAll('.tab-menu a'),
+            tabContent = document.querySelectorAll('#tab-content > div');
+
+        for (var i = 0; i < targetLink.length; i++) {
+            targetLink[i].addEventListener('click', function (e) {
+                e.preventDefault();
+                var orgTarget = e.target.getAttribute('href');
+                var tabTarget = orgTarget.replace('#', '');
+                for (var j = 0; j < tabContent.length; j++) {
+                    tabContent[j].style.display = 'none';
+                }
+                document.getElementById(tabTarget).style.display = 'block';
+                for (var k = 0; k < targetLink.length; k++) {
+                    targetLink[k].classList.remove('active');
+                }
+                e.target.classList.add('active');
+            });
+        }
+
+
+        document.getElementById('tabs-1').style.display = 'block';
+
+
+    </script>
+</body>
+
+</html>

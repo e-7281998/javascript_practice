@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.tab-wrapper {
+    width: 90%;
+    margin: 1rem auto;
+}
+
+.tab-menu {
+    list-style: none;
+    display: flex;
+    border-bottom: 1px solid #333;
+}
+
+.tab-menu li {
+    margin: 0 0.5rem;
+    background-color: yellowgreen;
+}
+
+.tab-menu li:first-child {
+    margin-left: 0;
+}
+
+.tab-menu li a {
+    padding: 0.5rem 1rem;
+    display: block;
+    text-decoration: none;
+    font-size: large;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.tab-menu li a.active {
+    background-color: green;
+    color: white;
+}
+
+.content-title {
+    font-weight: bold;
+    padding: 0.5rem;
+}
+
+#tab-content>div {
+    display: none;
+}

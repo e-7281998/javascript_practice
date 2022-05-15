@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/16_acodion.css">
+</head>
+
+<body>
+    <div class="container">
+        <button id="btn-collapse">Collapse All</button>
+        <h2>FAQ</h2>
+        <section id="faq">
+            <div class="panel-question active">
+                <div class="panel-heading">첫번째</div>
+                <div class="panel-body">
+                    댄스라인으로 꼽히는 멤버는 태민, Key인데, 특히 메인댄서 태민은 아이돌계에서 넘사벽이라 불리며, 손꼽히는 실력을 가진 것으로 유명하다. 데뷔 당시 헤드라인이 SM 춤짱 포함
+                    5인조
+                    신인그룹
+                </div>
+            </div>
+            <div class="panel-question">
+                <div class="panel-heading">두번째</div>
+                <div class="panel-body">
+                    보통 댄스라인으로 뽑히는 멤버는 위의 두 명이지만, 민호도 S.M.
+                    The Performance 멤버로 참여해 실력을 인정받았으며 메인보컬인 종현 또한 퍼포먼스 솔로가수답게 뛰어난 댄스 실력과 유려한 춤선을 지녔다. 온유 역시 난이도 높은 샤이니의
+                    퍼포먼스를
+                    소화할 능력치를 가지고 있다.
+                </div>
+            </div>
+            <div class="panel-question">
+                <div class="panel-heading">세번째</div>
+                <div class="panel-body">
+                    댄스라인으로 꼽히는 멤버는 태민, Key인데, 특히 메인댄서 태민은 아이돌계에서 넘사벽이라 불리며, 손꼽히는 실력을 가진 것으로 유명하다. 데뷔 당시 헤드라인이 SM 춤짱 포함
+                    5인조
+                    신인그룹
+                    데뷔였을 정도. Key도 SM 전국투어 오디션에서 8,000:1의 경쟁률을 '댄스'로 뚫고 데뷔했을 정도로 실력이 뛰어나다.
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        var btnCollapse = document.getElementById('btn-collapse'),
+            heading = document.getElementsByClassName('panel-heading'),
+            question = document.getElementsByClassName('panel-question'),
+            answer = document.getElementsByClassName('panel-body');
+
+        for (var i = 0; i < heading.length; i++) {
+            heading[i].addEventListener('click', function (e) {
+                for (var j = 0; j < question.length; j++) {
+                    question[j].classList.remove('active');
+                    e.target.parentNode.classList.add('active');
+                    activateBody();
+                }
+            });
+        }
+        function activateBody() {
+            for (var k = 0; k < answer.length; k++) {
+                // answer[k].style = 'display: none; border-top: 1px solid #333;';
+                answer[k].style.display = ' none';
+            }
+            var activePanel = document.querySelector('.panel-question.active .panel-body');
+            activePanel.style.display = 'block';
+        }
+        activateBody();
+
+        btnCollapse.addEventListener('click', function () {
+            for (var i = 0; i < answer.length; i++) {
+                answer[i].style.display = 'none';
+            }
+        });
+
+    </script>
+</body>
+
+</html>

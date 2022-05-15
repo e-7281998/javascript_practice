@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    padding: 2rem;
+    position: relative;
+}
+
+#btn-collapse {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    padding: 0.5rem;
+}
+
+.panel-question {
+    margin: 1rem;
+    border: 1px solid #333;
+}
+
+.panel-heading {
+    font-weight: bold;
+    padding: 0.5rem;
+    background-color: aquamarine;
+}
+
+.panel-body {
+    padding: 0.5rem;
+    background-color: azure;
+}
