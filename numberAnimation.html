@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .num_animation {
+            width: 300px;
+            padding: 20px;
+            font-size: 3em;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="num_animation" data-rate="1000">0</div>
+    <div class="num_animation" data-rate="500">0</div>
+    <div class="num_animation" data-rate="100">0</div>
+
+    <script>
+        var numAnimation = document.querySelectorAll('.num_animation');
+
+        function changeNum(n) {
+            var num = 0;
+            var targetNum = numAnimation[n].getAttribute('data-rate');
+            var intervalTime = 10;
+            if (targetNum > 500) {
+                intervalTime = 5;
+            }
+            var timer = setInterval(function () {
+                ++num;
+                numAnimation[n].innerText = num;
+                if (num == targetNum)
+                    clearInterval(timer);
+            }, 10);
+        }
+        for (var i = 0; i < numAnimation.length; i++) {
+            changeNum(i)
+        }
+
+
+    </script>
+</body>
+
+</html>
